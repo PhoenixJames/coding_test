@@ -1,18 +1,26 @@
 <template>
-  <div class="home">
-    Home Page
+  <div>
+    <PackList
+      v-if="packListData"
+      :pack-list-data="packListData"
+    />
   </div>
 </template>
 
 <script>
-import data from '@/assets/data/res_data.js';
+import resData from '@/assets/data/res_data';
+import PackList from '@/components/Home/Lists/PackList.vue';
 
 export default {
   name: 'Home',
   components: {
+    PackList,
   },
+  data: () => ({
+    packListData: resData.data.pack_list,
+  }),
   mounted() {
-    console.log({ data });
+    console.log({ resData });
   },
 };
 </script>

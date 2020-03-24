@@ -1,0 +1,107 @@
+<template>
+  <v-card
+    class="mx-auto"
+    max-width="344"
+    width="300"
+    height="350"
+    outlined
+  >
+    <v-row
+      class="ml-2 mt-2"
+    >
+      <v-chip
+        v-if="data.tag_name != null"
+        label
+        dark
+        small
+        color="black"
+      >
+        {{ data.tag_name }}
+      </v-chip>
+    </v-row>
+    <v-card-title>
+      <v-row
+        justify="center"
+      >
+        <span
+          class="title"
+        >
+          {{ data.pack_name }}
+        </span>
+      </v-row>
+    </v-card-title>
+    <v-row
+      justify="center"
+    >
+      <v-btn
+        class="mx-2"
+        fab
+        dark
+        large
+        color="cyan"
+      >
+        {{ number }}
+      </v-btn>
+    </v-row>
+    <br>
+    <v-row
+      justify="center"
+      class="overline"
+    >
+      50 Class Shareable Packs<br>
+      Perks & Hooks do not apply
+    </v-row>
+    <br>
+    <v-row
+      justify="center"
+    >
+      <span class="title">
+        $ {{ data.pack_price }}
+      </span>
+    </v-row>
+    <v-row
+      justify="center"
+    >
+      <span
+        color="gray"
+        class="caption"
+      >
+        $ {{ data.estimate_price }} per class
+      </span>
+    </v-row>
+    <v-card-actions />
+  </v-card>
+</template>
+
+<script>
+
+export default {
+  name: 'PackListItem',
+
+  components: {
+  },
+
+  props: {
+    data: {
+      type: Object,
+      default: () => {},
+    },
+    number: {
+      type: String,
+      default: () => '',
+    },
+  },
+
+  data: () => ({
+  }),
+
+  computed: {
+  },
+
+  mounted() {
+  },
+
+  methods: {
+  },
+};
+</script>
